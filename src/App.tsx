@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import PlayerTable from './components/PlayerTable';
+import {PlayerQuery} from './components/PlayerQuery';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <PlayerQuery rank={0} position={""} school={""} name={""} >
+        {({ loading, error, data }:any) => (
+            <PlayerTable data={data} error={error} loading={loading} />)}
+      </PlayerQuery>
     </div>
   );
 }
