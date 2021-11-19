@@ -23,8 +23,8 @@ function App() {
   return (
     <div>
       <div>
-        <SearchBar label={"Name: "} setVariable={setName}/>
-        <SearchBar label={"School: "} setVariable={setSchool}/>
+        <SearchBar label={"Name"} setVariable={setName}/>
+        <SearchBar label={"School"} setVariable={setSchool}/>
         <Select isSearchable={false} isClearable={true} options={options} placeholder={"Select Position"} onChange={(value) => setPosition((value==undefined)? "" : value.value)}/>
       </div>
       <div>

@@ -9,8 +9,7 @@ const SearchBar = ({ label, setVariable }: any) =>
     return (
     <form>
     <label>
-        {label}
-        <input type="text" name="name" onChange={handleChange}/>
+        <input type="text" name="name" placeholder={label} onChange={handleChange}/>
     </label>
     </form>
     )
