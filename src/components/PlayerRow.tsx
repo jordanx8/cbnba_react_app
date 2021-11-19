@@ -1,6 +1,8 @@
 export {}
 
 const PlayerRow = ({ rank, name, position, nextgame, school }:any) => {
+    var date = new Date(nextgame);
+    var dateplustime = date.toLocaleDateString()+', '+date.toLocaleTimeString()
     return (
         <>
         <td>
@@ -16,7 +18,7 @@ const PlayerRow = ({ rank, name, position, nextgame, school }:any) => {
             {school}
         </td>
         <td>
-            {nextgame}
+            {dateplustime}
         </td>
         </>
     )
