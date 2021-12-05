@@ -29,9 +29,9 @@ function App() {
       </div>
       <div>
         <ScrapeAndSeedMutation>
-        {({ scrapeAndSeed, loading, error, data }:any) => (
+        {({ scrapeAndSeed, loading, error, data }:any) => 
           (loading ? <button type="button" disabled>Loading</button> : <button onClick={scrapeAndSeed}>Refresh Database</button>)
-        )}
+        }
         </ScrapeAndSeedMutation>
       </div>
       <PlayerQuery rank={0} position={position} school={school} name={name} >
