@@ -2,9 +2,9 @@
 
 To be run with https://github.com/jordanx8/cbnba_webscraper, and https://github.com/jordanx8/cbnba_gql
 
-Front-end used to display data created from cbnba_webscraper and queried from cbnba_gql.
+Front-end used to display data created by [cbnba_webscraper](https://github.com/jordanx8/cbnba_webscraper) and queried from [cbnba_gql](https://github.com/jordanx8/cbnba_gql).
 
-Specifically, cbnba_react_app queries data from the cbnba_gql (a GraphQL server) and displays it on screen using various React components.
+Specifically, cbnba_react_app queries data from the [cbnba_gql](https://github.com/jordanx8/cbnba_gql) and displays it on screen using various React components.
 
 ## Available Scripts
 
