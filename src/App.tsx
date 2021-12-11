@@ -29,8 +29,11 @@ function App() {
       </div>
       <div>
         <ScrapeAndSeedMutation>
-          {({ scrapeAndSeed, loading, error, data }: any) =>
-            (loading ? <button type="button" disabled>Loading</button> : <button onClick={scrapeAndSeed}>Refresh Database</button>)
+          {({ scrapeAndSeed, loading, data }: any) =>
+            <div>
+              {(data != null) ? window.location.reload() : null}
+              <div>{(loading ? <button type="button" disabled>Loading</button> : <button onClick={scrapeAndSeed}>Refresh Database</button>)}</div>
+            </div>
           }
         </ScrapeAndSeedMutation>
       </div>
