@@ -1,6 +1,10 @@
+import { useState } from "react";
 import PlayerRow from "./PlayerRow"
 
+
+
 const PlayerTable = ({ data, error, loading }: any) => {
+    const [datesort, setDateSort] = useState(false);
     return (
         <div>
             <table style={{ backgroundColor: "steelblue" }}>
