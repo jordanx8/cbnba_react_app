@@ -22,32 +22,27 @@ function App() {
   ]
 
   return (
-    <div>
-      <div>
-        <SearchBar label={"Name"} setVariable={setName} />
-        <SearchBar label={"School"} setVariable={setSchool} />
-        <Select isSearchable={false} isClearable={true} options={options} placeholder={"Select Position"} onChange={(value) => setPosition((value == undefined) ? "" : value.value)} />
-        <div>
-          <label>
-            <input 
-              type="checkbox" 
-              checked={orderByDate}
-              onChange={() => setOrderByDate(!orderByDate)}
-              />
-            Order by Date
-          </label>
-        </div>
-      </div>
-      <div>
+    <div className='container'>
+      <div className='input-group'>
+      <div className='input-group-prepend'>
         <ScrapeAndSeedMutation>
           {({ scrapeAndSeed, loading, data }: any) =>
             <div>
               {(data != null) ? window.location.reload() : null}
-              <div>{(loading ? <button type="button" disabled>Loading</button> : <button onClick={scrapeAndSeed}>Refresh Database</button>)}</div>
+              <div>{(loading ? <button type="button" className="btn btn-dark" disabled>Loading</button> : <button className="btn btn-dark" onClick={scrapeAndSeed}>Refresh Database</button>)}</div>
             </div>
           }
         </ScrapeAndSeedMutation>
       </div>
+        <SearchBar label={"Name"} setVariable={setName} />
+        <SearchBar label={"School"} setVariable={setSchool} />
+        <Select isSearchable={false} isClearable={true} options={options} placeholder={"Select Position"} onChange={(value) => setPosition((value == undefined) ? "" : value.value)} />
+          <div className='form-check'>
+          <input type="checkbox" className='form-check-input' checked={orderByDate} onChange={() => setOrderByDate(!orderByDate)}/>
+          <label className="form-check-label">Order by Date</label>
+          </div>
+      </div>
+      
       <PlayerQuery rank={0} position={position} school={school} name={name} orderByDate={orderByDate}>
         {({ loading, error, data }: any) => (
           <PlayerTable data={data} error={error} loading={loading} />)}
